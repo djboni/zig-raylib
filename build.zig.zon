@@ -1,0 +1,12 @@
+.{
+    .name = "zig-raylib",
+    .version = "0.1.0",
+    .dependencies = .{
+        .raylib = .{ .path = "./dep/raylib/" },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}

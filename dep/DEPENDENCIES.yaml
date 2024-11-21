@@ -1,0 +1,9 @@
+# Dependencies
+- type: git
+  path: dep/raylib
+  url: https://github.com/raysan5/raylib
+  ref: c1ab645ca298a2801097931d1079b10ff7eb9df8
+- type: git
+  path: dep/raygui
+  url: https://github.com/raysan5/raygui
+  ref: 1e03efca48c50c5ea4b4a053d5bf04bad58d3e43
