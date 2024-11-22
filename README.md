@@ -1,6 +1,6 @@
 # Zig Raylib
 
-Also: How to add an external library to you Zig project.
+Alternative Title: How to add an external library to you Zig project.
 
 by Djones A. Boni
 
@@ -10,12 +10,10 @@ it to a Zig project. It did not go as smooth as I wished.
 So I created this project as a reference for me in the future and also for
 other people who is struggling to do the same.
 
-Zig is in development, changing quite a bit, and it is not well documented yet,
-so it was hard to fit all the bits in the right places.
+With this project we can just clone and `zig build run` our way to a working
+Raylib project.
 
-With this project we can just `zig build run` our way to a working Raylib project.
-
-Versions:
+## Versions
 
 - Raylib 5.5
 - Zig 0.13.0
@@ -25,8 +23,11 @@ Versions:
 Raylib has a pretty good build.zig that allows it to be added as a dependency
 and configured with much ease.
 
-Once you know **what functions to call** in your build.zig (<- this is the hard part),
-adding a dependency such as Raylib is easy.
+Zig is currently in development, changing quite a bit, and it is not well
+documented yet, so it was hard to fit all the bits in the right places.
+
+Adding a dependency such as Raylib is easy, once you know
+**what functions to call** in your build.zig.
 
 This project's objective is to explain the **what functions to call** part.
 
@@ -50,7 +51,7 @@ This project's objective is to explain the **what functions to call** part.
     },
     ```
 
-- Bring the external library dependency into the build.zig
+- Bring the external dependency into your build.zig
 
   ```zig
       const raylib_dep = b.dependency("raylib", .{
@@ -63,7 +64,9 @@ This project's objective is to explain the **what functions to call** part.
       const raylib = raylib_dep.artifact("raylib");
   ```
 
-- Figuring out how to set options for the external library (as shown above)
+- Set options for the external dependency (as shown above)
+
+  - I had to enable the option `.linux_display_backend = .X11`
 
 - Link the external library to the executable
 
